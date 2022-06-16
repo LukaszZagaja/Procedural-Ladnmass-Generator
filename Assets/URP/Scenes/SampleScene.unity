@@ -250,7 +250,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapWidth: 100
   mapHeight: 100
-  noiseScale: 0.3
+  noiseScale: 2
+  octaves: 2
+  persistance: 0
+  lacunarity: 2
+  seed: 1
+  offset: {x: 0, y: 0}
   autoUpdate: 1
 --- !u!114 &1564860145
 MonoBehaviour:
@@ -264,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e54add522a87a42bf6b2969f454d26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textureRenderer: {fileID: 917268767}
+  textureRender: {fileID: 917268767}
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +503,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0.44921875, w: 0.171875}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
