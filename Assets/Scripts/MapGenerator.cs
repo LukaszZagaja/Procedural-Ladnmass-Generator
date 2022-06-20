@@ -18,6 +18,8 @@ public class MapGenerator : MonoBehaviour
 
 	public bool autoUpdate;
 
+	public TerrainType[] regions;
+
 	public void GenerateMap()
 	{
 		float[,] noiseMap = Noise.GenerateNoiseMap(mapWidth, mapHeight, seed, noiseScale, octaves, persistance, lacunarity, offset);
@@ -47,4 +49,12 @@ public class MapGenerator : MonoBehaviour
 		}
 	}
 
+}
+
+[System.Serializable]
+public struct TerrainType
+{
+	public string name;
+	public float height; // from 0 to 1, if there is 0.4 then it will be from 0 to 0.4 and next thing will be to 0.4 to x
+	public Color colour;
 }
