@@ -4,7 +4,7 @@ using System.Collections;
 public class MapGenerator : MonoBehaviour
 {
 
-	public enum DrawMode {NoiseMap, ColourMap };
+	public enum DrawMode {NoiseMap, ColourMap, Mesh};
 	public DrawMode drawMode;
 
 	public int mapWidth;
@@ -53,6 +53,10 @@ public class MapGenerator : MonoBehaviour
         {
 			display.DrawTexture(TextureGenerator.TextureFromColourMap(colourMap, mapWidth, mapHeight));
 		}
+		else if (drawMode == DrawMode.Mesh)
+        {
+			display.DrawMesh (MeshGenerator.GenerateTerrainMesh(noiseMap), TextureGenerator.TextureFromColourMap(colourMap, mapWidth, mapHeight));
+        }
 	}
 
 	void OnValidate()
